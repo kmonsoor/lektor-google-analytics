@@ -19,13 +19,11 @@ lektor-google-analytics = 0.1
 
 The plugin has a config file that is needed to inform it about your
 website.  Just create a file named `google-analytics.ini` into your
-`configs/` folder and configure the `GOOGLE_ANALYTICS` key with target 
+`configs/` folder and configure the `GOOGLE_ANALYTICS_ID` key with target 
 property ID of form 'UA-abcdefgx-y':
 
 ```ini
-GOOGLE_ANALYTICS = 'UA-abcdefgx-y'
-; GOOGLE_ANALYTICS_PROPERTY = 'auto'
-; LEGACY = 0
+GOOGLE_ANALYTICS_ID = 'UA-XXXXXXXX-Y'
 ```
 
 ## In Templates
@@ -37,6 +35,7 @@ just calling the `generate_google_analytics` function.
 <div class="ga-script">{{ generate_google_analytics() }}</div>
 ```
 
+### Below are still under development
 Optionally the function accepts a few arguemnts:
 
 * Use `GOOGLE_ANALYTICS_PROPERTY` property to set it to include custom-built 
