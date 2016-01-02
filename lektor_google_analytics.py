@@ -13,7 +13,7 @@ SCRIPT = '''
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{GOOGLE_ANALYTICS_ID}}', 'auto');
+        ga('create', '%(GOOGLE_ANALYTICS_ID)s', 'auto');
         ga('send', 'pageview');
 </script>
 '''
@@ -21,11 +21,11 @@ SCRIPT = '''
 
 class GoogleAnalyticsPlugin(Plugin):
     name = u'Google Analytics'
-    description = u'Adds Google Analytics to a website.'
+    description = u'Adds Google Analytics to Lektor-generated website'
 
-    def get_google_config(self):
-        configs = []
-        ctx = get_ctx()
+    # def get_google_config(self):
+      #  configs = []
+       # ctx = get_ctx()
         # if ga_property is None:
             # ga_property = 'auto'
         # if ga_property is not None:
@@ -39,18 +39,15 @@ class GoogleAnalyticsPlugin(Plugin):
         # return ' '.join(configs)
 
     def on_setup_env(self, **extra):
-        ga_property = self.get_config().get('GOOGLE_ANALYTICS_PROPERTY', None)
-        ga_legacy = self.get_config().get('LEGACY', 0)
-                
+        ga_property = self.get_config().get('GOOGLE_ANALYTICS_PROPERTY', 'auto')
+        ga_legacy = self.get_config().get('GOOGLE_ANALYTICS_LEGACY', 0)
         google_analytics_id = self.get_config().get('GOOGLE_ANALYTICS_ID')
+
         if google_analytics_id is None:
             raise RuntimeError('GOOGLE_ANALYTICS_ID is not configured')
 
         def google_analytics():
-            config = self.get_google_config()
-            return Markup(SCRIPT % {
-                'config': config,
-                'google_analytics_id': google_analytics_id,
-            })
+            # config = self.get_google_config()
+            return Markup(SCRIPT % {'GOOGLE_ANALYTICS_ID': google_analytics_id})
 
         self.env.jinja_env.globals['generate_google_analytics'] = google_analytics

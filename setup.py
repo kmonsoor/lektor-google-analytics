@@ -12,10 +12,10 @@ setup(
     license='BSD',
     description='Adds support for Google analytics to Lektor',
     long_description = README + '\n',
-    py_modules=['lektor-google-analytics'],
+    py_modules=['lektor_google_analytics'],
     entry_points={
         'lektor.plugins': [
-            'google-analytics = lektor-google-analytics:GoogleAnalyticsPlugin',
+            'google-analytics=lektor_google_analytics:GoogleAnalyticsPlugin',
         ]
     },
     classifiers=[
