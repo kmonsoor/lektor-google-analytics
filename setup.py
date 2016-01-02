@@ -8,14 +8,14 @@ setup(
     author='Khaled Monsoor',
     author_email='k@kmonsoor.com',
     url='http://github.com/kmonsoor/lektor-google-analytics',
-    version='0.1.1',
+    version='0.1.2',
     license='BSD',
     description='Adds support for Google analytics to Lektor',
     long_description = README + '\n',
     py_modules=['lektor-google-analytics'],
     entry_points={
         'lektor.plugins': [
-            'google-analytics = lektor_google_analytics:GoogleAnalyticsPlugin',
+            'google-analytics = lektor-google-analytics:GoogleAnalyticsPlugin',
         ]
     },
     classifiers=[
