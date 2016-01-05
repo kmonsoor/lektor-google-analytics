@@ -1,7 +1,9 @@
 # lektor-google-analytics
 
 
-[![](https://img.shields.io/badge/License-BSD-blue.svg)]((https://opensource.org/licenses/BSD-3-Clause))
+[![](https://img.shields.io/badge/License-BSD-blue.svg)]((https://opensource.org/licenses/BSD-3-Clause)) 
+[![Requirements Status](https://requires.io/github/kmonsoor/lektor-google-analytics/requirements.svg?branch=master)](https://requires.io/github/kmonsoor/lektor-google-analytics/requirements/?branch=master)
+
 
 This plugin adds support for [Google analytics](http://www.google.com/analytics/) to [Lektor CMS](https://github.com/lektor/lektor).
 
