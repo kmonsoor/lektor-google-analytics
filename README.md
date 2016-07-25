@@ -18,7 +18,7 @@ To enable the plugin add this to your project file:
 
 ```ini
 [packages]
-lektor-google-analytics = 0.1
+lektor-google-analytics = 0.1.3
 ```
 
 ### Configuring the Plugin
