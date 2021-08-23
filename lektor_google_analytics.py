@@ -19,7 +19,7 @@ class GoogleAnalyticsPlugin(Plugin):
     name = u'Google Analytics'
     description = u'adds support for Google Analytics to Lektor CMS'
 
-    def on_setup_env(self):
+    def on_setup_env(self, **extra):
         ga_property = self.get_config().get('GOOGLE_ANALYTICS_PROPERTY', 'auto')
         google_analytics_id = self.get_config().get('GOOGLE_ANALYTICS_ID')
 
